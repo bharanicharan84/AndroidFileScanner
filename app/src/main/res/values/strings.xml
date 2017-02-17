@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidFileScanner</string>
+    <string name="start_scanning">Start Scan</string>
+    <string name="stop_scanning">Stop Scan</string>
+    <string name="average_file_size">Avg file Size :</string>
+    <string name="share_result">Share Data</string>
+</resources>

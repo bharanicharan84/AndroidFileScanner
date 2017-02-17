@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_file_scanner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="filescanner.test.com.androidfilescanner.UI.FileScannerActivity">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/show_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/btn_start_scan"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/start_scanning" />
+
+            <Button
+                android:id="@+id/btn_stop_scan"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/btn_start_scan"
+                android:layout_below="@id/btn_start_scan"
+                android:layout_weight="1"
+                android:text="@string/stop_scanning" />
+
+            <Button
+                android:id="@+id/btn_share_result"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/btn_start_scan"
+                android:layout_below="@id/btn_start_scan"
+                android:layout_weight="1"
+                android:text="@string/share_result" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/show_results"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/result_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_avg_file_size"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/average_file_size"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_avg_file_size_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/txt_avg_file_size"
+                android:text="150kb"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/txt_top_extensions"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txt_avg_file_size"
+                android:layout_marginTop="10dp"
+                android:text="Top Extensions : "
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txt_extn_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_avg_file_size"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/txt_top_extensions" />
+
+            <ProgressBar
+                android:id="@+id/scan_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <ListView
+                android:id="@+id/list_results"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txt_extn_result"
+                android:layout_marginTop="10dp"></ListView>
+        </RelativeLayout>
+
+    </FrameLayout>
+
+
+</LinearLayout>
